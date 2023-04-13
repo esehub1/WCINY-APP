@@ -1,0 +1,79 @@
+.li-ionic4-datePicker {
+  .modal-wrapper {
+    height: 75%;
+    width: 310px;
+    border-radius: 0px;
+    @media (min-width: 768px) {
+      width: 350px;
+      height: 65%;
+    }
+  }
+}
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+ion-item {
+  --border-width: 0;
+  --inner-border-width: 0;
+  --show-full-highlight: 0;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  ion-label {
+    overflow: visible;
+  }
+}
+
+.floatingwithicon {
+  .calicon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .clearButton {
+    right: 37px !important;
+    bottom: 9px !important;
+  }
+}
+
+
+// ion-icon {
+//     position: absolute;
+//     top: 12px;
+//     right: 0;
+// }
+
+:host {
+  ion-toggle {
+    &.ng-valid[required],
+    &.ng-valid.required,
+    &.ng-valid:not(form) {
+      border-bottom: none !important;
+    }
+    &.ng-pristine:not(form) {
+      border-bottom: none !important;
+    }
+  }
+}
+section {
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+section:not(.full-width),
+.full-width > header {
+  padding: 0 10px;
+}
+
+.vid { position: relative; }
+
+.vid a {
+  position: absolute;
+  display: block;
+  background: url("../../assets/img/plays.png");
+  height: 64px;
+  width: 64px;
+  top: 25%;
+  left: 40%;
+}

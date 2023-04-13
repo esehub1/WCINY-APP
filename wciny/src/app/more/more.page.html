@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <img class="middlelogo" src="assets/img/more.png">
+
+    <ion-row *ngFor="let c of itemColumns; let i = index">
+      <ion-col size="6" class="flexCol">
+        <div class="{{c.leftBackground}} flexItemBig" (click)="navigate(c.leftOpt,c.leftIsURL)">
+          <a class="largess" >
+            <ion-icon name="{{c.leftIcon}}"></ion-icon>
+            <h4>{{c.leftText}}</h4>
+          </a>
+        </div>
+      </ion-col>
+      <ion-col size="6" class="flexCol">
+        <div class="{{c.rightBackground}} flexItemBig" (click)="navigate(c.rightOpt,c.rightIsURL)">
+          <a class="largess" >
+            <ion-icon name="{{c.rightIcon}}"></ion-icon>
+            <h4>{{c.rightText}}</h4>
+          </a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>

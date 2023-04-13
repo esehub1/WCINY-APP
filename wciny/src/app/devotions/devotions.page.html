@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar color="winners-red">
+        <ion-text>
+            <div class="ion-text-wrap ion-text-end ion-padding">
+                WINNERS CHAPEL INT'L <br> NEW YORK
+            </div>
+        </ion-text>
+        <ion-buttons slot="start" style="flex-flow: column">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+        </ion-buttons>
+        <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item hidden>
+        <ion-input readonly [(ngModel)]="selectedDate"></ion-input>
+    </ion-item>
+    <section>
+        <h3 class="ion-text-center">Select Date</h3>
+        <ion-button color="reds" expand="block" (click)="openDatePicker()">
+            {{selectedDate}}
+            <ion-icon name="calendar" slot="end"></ion-icon>
+        </ion-button>
+    </section>
+
+<!--        <img class="middlelogo" src="assets/img/Events.png" alt=""> {{item.images.imageMedium}}-->
+        <div *ngIf="showEvent">
+            <ion-list class="remove-top" *ngFor="let item of itemList">
+                <div>
+                    <img src="{{item.images.imageMedium}}" alt="{{item.title}}">
+                </div>
+            <ion-item class="ion-padding">
+                    <ion-label>
+                        <ion-text color="dark">
+                            <h2 class="ion-padding-bottom"><b>Topic: {{item.title}}</b></h2>
+                        </ion-text>
+                        <h2 class="ion-padding-bottom">Verse: {{item.bible_verse}}</h2>
+                        <h2>{{item.content}}</h2>
+                    </ion-label>
+            </ion-item>
+                <section>
+                    <ion-button color="winners-red" expand="block" (click)="shareUs(item)">
+                        Share
+                        <ion-icon name="share" slot="end"></ion-icon></ion-button>
+                </section>
+
+                <!--                <div class="vid">-->
+<!--                    <img class="signinlogo" src="{{getThumb(item)}}" alt="{{item.title}} Photo">-->
+<!--                    <a href="#" (click)="playVid(item)"></a>-->
+<!--                </div>-->
+    </ion-list>
+        </div>
+        <ion-item *ngIf="!showEvent"  >
+            <h3 style="text-align:center;">There are no events to show</h3>
+        </ion-item>
+
+ <!--   <ion-list>
+
+        <ion-item hidden>
+            <ion-input readonly [(ngModel)]="selectedDate"></ion-input>
+        </ion-item>
+      <section>
+        <ion-button color="reds" expand="block" (click)="openDatePicker()">
+          {{selectedDate}}
+          <ion-icon name="calendar" slot="end"></ion-icon>
+        </ion-button>
+      </section>
+
+        <div *ngIf="showEvent">
+            <ion-item class="card item-avatar item-text-wrap" *ngFor="let item of itemList">
+                <ion-label>
+                <h4 >{{item.title}}</h4>
+                </ion-label>
+                <div class="vid">
+                    <img class="signinlogo" [src]="getThumb(item)" alt="{{item.images.imageMedium}} Photo">
+                    <a href="#" (click)="playVid(item)"></a>
+                </div>
+
+                <h2>Today's Topic: {{item.title}}</h2>
+                <div class="ion-padding ion-text-wrap">
+                    {{item.content}}
+                </div>
+                <div class="ion-padding-horizontal">
+                    <ion-button expand="block" color="blueDark" (click)="shareUs(item)">Share</ion-button>
+                </div>
+            </ion-item>
+        </div>
+        <ion-item *ngIf="!showEvent">
+            <h3 style="text-align:center;"  class="ion-text-wrap ion-padding">There is no devotion to show for this date</h3>
+        </ion-item>
+    </ion-list>-->
+</ion-content>

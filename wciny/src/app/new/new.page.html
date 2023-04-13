@@ -1,0 +1,143 @@
+<ion-header>
+    <ion-toolbar color="winners-red">
+        <ion-text>
+            <div class="ion-text-wrap ion-text-end ion-padding">
+                WINNERS CHAPEL INT'L <br> NEW YORK
+            </div>
+        </ion-text>
+        <ion-buttons slot="start" style="flex-flow: column">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+        </ion-buttons>
+        <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+            <ion-list>
+                <form [formGroup]="firstForm">
+                    <div [hidden]="isPageTwo">
+                  <ion-item>
+                    <ion-label position="floating" color="primary">First Name:</ion-label>
+                    <ion-input formControlName="Fname" type="text"
+                               [class.invalid]="!firstForm.controls.Fname.valid && (firstForm.controls.Fname.dirty || submitAttempt)"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="!firstForm.controls.Fname.valid  && (firstForm.controls.Fname.dirty || submitAttempt)">
+                    <p>Please enter a valid name.</p>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating" color="primary">Last Name:</ion-label>
+                    <ion-input formControlName="Lname" type="text"
+                               [class.invalid]="!firstForm.controls.Lname.valid && (firstForm.controls.Lname.dirty || submitAttempt)"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="!firstForm.controls.Lname.valid  && (firstForm.controls.Lname.dirty || submitAttempt)">
+                    <p>Please enter a valid name.</p>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating" color="primary">Telephone:</ion-label>
+                    <ion-input formControlName="Phone" type="tel"  [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}"
+                               [class.invalid]="!firstForm.controls.Phone.valid && (firstForm.controls.Phone.dirty || submitAttempt)"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="!firstForm.controls.Phone.valid  && (firstForm.controls.Phone.dirty || submitAttempt)">
+                    <p>Please enter a valid phone number.</p>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating" color="primary">Email:</ion-label>
+                    <ion-input formControlName="Email" type="email"
+                               [class.invalid]="!firstForm.controls.Email.valid && (firstForm.controls.Email.dirty || submitAttempt)"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="!firstForm.controls.Email.valid  && (firstForm.controls.Email.dirty || submitAttempt)">
+                    <p>Please enter a valid email address.</p>
+                  </ion-item>
+                  <ion-item class="ion-padding-top">
+                    <ion-label position="floating" color="primary">Date of Birth:</ion-label>
+                    <ion-datetime formControlName="Dob" placeholder="DD Month YYYY" [(ngModel)]="userDob"
+                                  (ionCancel)="clearDob()" displayFormat="DD MMMM YYYY"
+                                  [class.invalid]="!firstForm.controls.Dob.valid && (firstForm.controls.Dob.dirty || submitAttempt)"></ion-datetime>
+                  </ion-item>
+                  <ion-item *ngIf="!firstForm.controls.Dob.valid  && (firstForm.controls.Dob.dirty || submitAttempt)">
+                    <p>Please enter date of birth</p>
+                  </ion-item>
+                    <ion-item lines="none">
+                        <ion-label position="stacked" color="primary" >Married? (optional)</ion-label>
+                        <ion-toggle slot="start" [(ngModel)]="isChecked" formControlName="Married" (ionChange)="onChange()"
+                                    [class.invalid]="!firstForm.controls.Married.valid && (firstForm.controls.Married.dirty || submitAttempt)">
+                            Married?
+                        </ion-toggle>
+                    </ion-item>
+                    <ion-item
+                            *ngIf="!firstForm.controls.Married.valid  && (firstForm.controls.Married.dirty || submitAttempt)">
+                        <p>Please enter Marital status</p>
+                    </ion-item>
+                    <ion-item class="ion-padding-bottom" [hidden]="hideMe">
+                        <ion-label position="floating" color="primary">Wedding Anniversary:</ion-label>
+                        <ion-datetime formControlName="Wedding" placeholder="DD Month YYYY" (ionCancel)="clearWedding()"
+                                      [(ngModel)]="userWedding" displayFormat="DD MMMM YYYY"
+                                      [class.invalid]="!firstForm.controls.Wedding.valid && (firstForm.controls.Wedding.dirty || submitAttempt)"></ion-datetime>
+                    </ion-item>
+                    <ion-item *ngIf="!firstForm.controls.Wedding.valid  && (firstForm.controls.Wedding.dirty || submitAttempt)">
+                        <p>Please enter anniversary date</p>
+                    </ion-item>
+                    <div class="ion-padding-horizontal" [hidden]="hideVerify">
+                        <ion-button expand="block" color="bluedark" (click)="next()">Continue</ion-button>
+                    </div>
+                    </div>
+                    <div [hidden]="!isPageTwo">
+                        <ion-item >
+                            <ion-label position="floating" color="primary">Address:</ion-label>
+                            <ion-input formControlName="Address" type="text"
+                                       [class.invalid]="!firstForm.controls.Address.valid && (firstForm.controls.Address.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!firstForm.controls.Address.valid  && (firstForm.controls.Address.dirty || submitAttempt)">
+                            <p>Please enter a valid address.</p>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating" color="primary">City:</ion-label>
+                            <ion-input formControlName="City" type="text"
+                                       [class.invalid]="!firstForm.controls.City.valid && (firstForm.controls.City.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!firstForm.controls.City.valid  && (firstForm.controls.City.dirty || submitAttempt)">
+                            <p>Please enter a valid city.</p>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating" color="primary">State:</ion-label>
+                            <ion-input formControlName="State" type="text"
+                                       [class.invalid]="!firstForm.controls.State.valid && (firstForm.controls.State.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!firstForm.controls.State.valid  && (firstForm.controls.State.dirty || submitAttempt)">
+                            <p>Please enter a valid state / province.</p>
+                        </ion-item>
+                        <ion-item class="ion-padding-vertical">
+                            <ion-label position="floating" color="primary">Zip code:</ion-label>
+                            <ion-input formControlName="Zip" type="text"
+                                       [class.invalid]="!firstForm.controls.Zip.valid && (firstForm.controls.Zip.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!firstForm.controls.Zip.valid  && (firstForm.controls.Zip.dirty || submitAttempt)">
+                            <p>Please enter a valid zip code.</p>
+                        </ion-item>
+  
+                        <ion-item [hidden]="true">
+                            <ion-label position="stacked">Value:</ion-label>
+                            <ion-input formControlName="Value" type="text"></ion-input>
+                        </ion-item>
+                        <ion-item [hidden]="true">
+                            <ion-label position="stacked">Platform:</ion-label>
+                            <ion-input formControlName="Platform" type="text"></ion-input>
+                        </ion-item>
+                        <ion-item [hidden]="true">
+                            <ion-label position="stacked">Date Created:</ion-label>
+                            <ion-input formControlName="CreatedAt" type="text"></ion-input>
+                        </ion-item>
+
+                        <div class="ion-padding-horizontal">
+                            <ion-button expand="block" slot="start" color="winners-red" (click)="prev()">Go Back</ion-button>
+                            <ion-button expand="block" color="bluedark" slot="end" (click)="save()">Submit</ion-button>
+                        </div>
+                    </div>
+                </form>
+            </ion-list>
+</ion-content>

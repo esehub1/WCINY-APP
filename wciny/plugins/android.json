@@ -1,0 +1,80 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-calendar": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "ANDROID_FCM_VERSION": "19.0.0",
+      "ANDROID_GRADLE_TOOLS_VERSION": "3.5.3",
+      "ANDROID_GOOGLE_SERVICES_VERSION": "4.3.3",
+      "ANDROID_DEFAULT_NOTIFICATION_ICON": "@mipmap/ic_launcher",
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyAN2MM5jA07gE7bZvsCL9tjuXy3DGCXfwg",
+      "OKHTTP_VERSION": "3.12.0",
+      "PACKAGE_NAME": "com.wci.ny"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.wci.ny"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.wci.ny"
+    }
+  }
+}
