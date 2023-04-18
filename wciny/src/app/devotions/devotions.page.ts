@@ -22,7 +22,7 @@ export class DevotionsPage implements OnInit {
     const e = a.getFullYear() + '-' + (a.getMonth() + 1) + '-' + a.getDate();
     const params = 'cats=3&type=devotion&start=' + e;
     this.apiCall.fetchData('get/k2/items/', params, false).subscribe(
-        data => {
+        (data:any) => {
           this.showEvent = !!(Array.isArray(data.items) && data.items.length > 0);
           this.itemList = data.items;
           console.log(data.items);

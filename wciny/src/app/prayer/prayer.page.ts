@@ -27,7 +27,7 @@ export class PrayerPage implements OnInit {
 /*      this.presentToast('Prayer request successfully submitted');*/
       // submit form details add addItem(userId)
       this.apiCall.sendData('post/nubia/save', postData, true).subscribe(
-          data => {
+          (data:any) => {
             console.log(data);
             if (data.status === 'ko'){
               this.presentToast('There was a problem with your submission: ' + data.error_description );

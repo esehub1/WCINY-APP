@@ -53,7 +53,7 @@ export class NewPage implements OnInit {
                 console.log(postData);
                 // submit form details add addItem(userId)
                 this.apiCall.sendData('user/new', postData, true).subscribe(
-                    data => {
+                    (data:any) => {
                         if (data.status === 'ko') {
                             this.presentToast('There was a problem with your submission: ' + data.error_description);
                         } else {
